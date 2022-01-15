@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Interpreter</title>
+</head>
+<body>
+    <div>What letters are signed?</div>
+    <button type = 'button' onclick = "init()">Start</button>
+    <div id = "webcam-container"></div>
+    <div id = "label-container"></div>
+    <!-- lines 14-15 unclear, I've just sefined my script file -->
+    <script src = "script.js"></script>   
+    <script type = text/javascript>
+    
+    <!-- const URL = "https://teachablemachine.withgoogle.com/models/_0lvky6nw/"; -->
+
+    function initAudioPlayer(){
+        audio = new Audio();
+    }
+    window.addEventListener("load", initAudioPlayer);
+    let model, webcam, labelContainer, maxPredictions;
+
+    async function init(){
+        const modelURL = URL + "model.json";
+        const metadateURL = UR: + "metadate.json";
+
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+        const flip = true;
+        webcam = new tmImage.Webcam(200, 200, flip);
+        await webcam.setup();
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i=0, i<maxPredictions; i++){
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop(){
+        webcam.update();
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+    // pickup where we ended- run webcam image through image model (line 64?)
+
+</script>
+</body>
+</html>

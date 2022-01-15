@@ -48,7 +48,28 @@
         window.requestAnimationFrame(loop);
     }
     // pickup where we ended- run webcam image through image model (line 64?)
+    async function predict(){
+        const prediction = await model.predict(webcam.canvas);
+        if(prediction[0].probability.toFixed(2) > 0.80){
+            labelContainer.childNodes[0].innerHTML = "This sign is the letter A";
+            // var audio = new Audio('a.mp3');
+            // audio.play();
+        }
+        else if(prediction[1].probability.toFixed(2) > 0.80){
+            labelContainer.childNodes[0].innerHTML = "This sign is the letter B";
+            // var audio = new Audio('b.mp3');
+            // audio.play();
+        }
+        else{
+            labelContainer.childNodes[0].inerHTML = "Sign not recognized. please try again with a different sign or background colour";
+        }
 
+        // for (let i=0; i<maxPredictions; i++){
+        //     const classPrediction = prediction[i].className + ": " + prediction[1].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
+    }
 </script>
+
 </body>
 </html>

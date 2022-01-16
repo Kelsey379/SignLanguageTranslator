@@ -4,19 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Model</title>
     <link href = "style.css" rel = "stylesheet" type = "text/css"/>
 </head>
 <body>
+    <img class=nav-bar src="/images/Group 6.png" alt="navigational bar" onclick="init()">
+
     <header>
         <div class = "backgroundimg">
             <h1>Teachable Machine Image Model</h1>
         </div>   
     <header>
-    <button type="button" id="button" onclick="init()">Start</button>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div>
+    <section>
+        <div class="container">
+            <div class="slide-container">
+                <div class="slide">
+                    <img class="slide-image" src="/images/slide1.jpg" alt="girl waving 1">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="/images/slide2.gif" alt="girl with dog">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="/images/slide3.gif" alt="guy posing">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="/images/slide4.jpg" alt="girl waving 2">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="/images/slide5.gif" alt="guy hand gestures">
+                </div>
+            
+                <a class="next" onclick="moveSlide()">&#10095;</a>       
+            </div>
+        </div>
     
+        <p class="description">Tap record to translate from ASL</p>
+        <img src="/images/record-button.png" alt="record button" class="button" onclick="init()">   
+        
+        <div id="webcam-container">
+         
+        </div>
+    </section>
+    <div class="label">Webcam</div>
+    <div id="label-container"></div>
+    <div class="container-center-horizontal">
+
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
@@ -42,7 +75,8 @@
 
             // Convenience function to setup a webcam
             const flip = true; // whether to flip the webcam
-            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            
+            webcam = new tmImage.Webcam(600, 400, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
@@ -72,7 +106,6 @@
             }
         }
     </script>
-
 </body>
 </html>
 

@@ -1,41 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:500");
+
 *{
-    font-family: Arial, Helvetica, sans-serif
+    font-family: "Poppins";
 }
 body{
-    background-color: rgb(232, 236, 238);
+    background-image: url(/images/bg-1@2x.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-.backgroundimg{
-    background-image: url(https://d1oqwsnd25kjn6.cloudfront.net/production/files/142429/large_original/american-sign-language-asl-for-beginners.jpg?1429817328);
-    height: 300px;
-    display: flex;
-    justify-content: center;
+.nav-bar{
+    margin: -1vw;
+    width: 100vw;
+    height: 11vw;
+    left: 0;
+    background-image: "/images/Group 6.png";
 }
+
+
 
 h1{
     color: rgb(231, 243, 248);
-    background-color: rgba(202,236,237, 0.2);
-    padding: 30px;
-    padding-top: 75px;
+    background-color: rgba(108, 28, 128, 0.24);
+    padding: 1vw;
     text-align: center;
-    font-size: 60px;
+    font-size: 5.5vw;
 }
 
-button{
-    margin-top:20px;
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slide-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.slide{
+    border: 1px solid purple;
+    margin-left: 4vw;
+    margin-top: 0vw;
+    display: none;
+}
+
+.slide-image{
+    width: 40vw;
+    height: 25vw;
+}
+
+
+.slide-default{
+    border: 1px solid purple;
+    margin-left: 6vw;
+    margin-top: 2vw;
+
+}
+
+.next{
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 6vw;
+  transition: 0.6s ease;
+  margin-left: 1vw;
+  margin-top: 8vw;
+}
+
+
+.description{
+    color: white;
+    font-size: 2.5vw;
+    float: right;
+    margin-top: -26vw;
+    margin-right: 8vw;
+}
+
+.button{
+    cursor: pointer;
     text-decoration: none;
-    color:rgb(41, 42, 116);
-    font-weight: 600;
-    background-color: white;
-    font-size: 18px;
-    padding-right:25px;
-    padding-left:25px;
-    padding-top:12px;
-    padding-bottom:12px;
-    border-radius:25px;
+    color:white;
+    font-weight: bold;
+    font-size: 4vw;
+    padding: 2vw 6vw;
     transition:200ms all ease;
     border-color: rgb(18, 19, 70);
+    float: right;
+    margin-top: -20vw;
 }
+
+.label{
+    background-color: white;
+    margin-left: 3vw;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+#label-container{
+    font-size: 2vw;
+    margin-left: 5vw;
+}
+
+#webcam-container{
+    margin-left: 6vw;
+    margin-top: 19vw;
+}
+
 
 
 

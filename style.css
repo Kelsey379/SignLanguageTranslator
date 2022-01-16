@@ -1,11 +1,41 @@
-body {
-    background-color: blue;
+*{
+    font-family: Arial, Helvetica, sans-serif
+}
+body{
+    background-color: rgb(232, 236, 238);
 }
 
-div{
-    color: blue;
+.backgroundimg{
+    background-image: url(https://d1oqwsnd25kjn6.cloudfront.net/production/files/142429/large_original/american-sign-language-asl-for-beginners.jpg?1429817328);
+    height: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 h1{
-    color: blue;
+    color: rgb(231, 243, 248);
+    background-color: rgba(202,236,237, 0.2);
+    padding: 30px;
+    padding-top: 75px;
+    text-align: center;
+    font-size: 60px;
 }
+
+button{
+    margin-top:20px;
+    text-decoration: none;
+    color:rgb(41, 42, 116);
+    font-weight: 600;
+    background-color: white;
+    font-size: 18px;
+    padding-right:25px;
+    padding-left:25px;
+    padding-top:12px;
+    padding-bottom:12px;
+    border-radius:25px;
+    transition:200ms all ease;
+    border-color: rgb(18, 19, 70);
+}
+
+
+
